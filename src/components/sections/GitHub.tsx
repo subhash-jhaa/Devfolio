@@ -67,7 +67,7 @@ export const GitHub = async () => {
 
   return (
     <section className="rounded-3xl p-4 sm:p-8 border border-gray-200 bg-white shadow-xl overflow-hidden">
-      <SectionHeader title="GitHub" subtitle="Highlights from my activity and pinned repositories." />
+      <SectionHeader title={portfolioData.titles.github} subtitle={portfolioData.titles.githubSubtitle} />
 
       <div className="space-y-6">
         <div>
@@ -79,7 +79,7 @@ export const GitHub = async () => {
                   <path d="M9 18c-4.51 2-5-2-7-2"></path>
                 </svg>
                 <span className="text-sm font-semibold text-gray-900">
-                  {username} • {totalContributions} contributions
+                  {username} • {totalContributions} {portfolioData.labels.contributions}
                 </span>
               </div>
             </div>
@@ -100,7 +100,7 @@ export const GitHub = async () => {
                   </svg>
                 </div>
                 <span className="text-sm font-semibold text-gray-900">
-                  {repos.length} pinned • 41 repositories (public only)
+                  {repos.length} {portfolioData.labels.pinned} • 41 {portfolioData.labels.publicRepos}
                 </span>
               </div>
             </div>

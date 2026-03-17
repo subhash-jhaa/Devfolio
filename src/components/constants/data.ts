@@ -106,4 +106,19 @@ export const portfolioData: PortfolioData = {
       url: "https://github.com/subhash-jhaa/Dev-Events",
     },
   ],
+  titles: {
+    skills: "Skills",
+    experience: "Work Experience",
+    projects: "Projects I've Made",
+    github: "GitHub",
+    githubSubtitle: "Highlights from my activity and pinned repositories.",
+  },
+  labels: {
+    downloadCv: "Download CV",
+    techStack: "Tech Stack",
+    contributions: "contributions",
+    pinned: "pinned",
+    publicRepos: "repositories (public only)",
+    share: "Share",
+  },
 };

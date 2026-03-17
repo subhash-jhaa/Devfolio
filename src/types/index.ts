@@ -52,4 +52,19 @@ export interface PortfolioData {
   projects: Project[];
   githubStats: GitHubStats;
   pinnedRepositories: PinnedRepo[];
+  titles: {
+    skills: string;
+    experience: string;
+    projects: string;
+    github: string;
+    githubSubtitle: string;
+  };
+  labels: {
+    downloadCv: string;
+    techStack: string;
+    contributions: string;
+    pinned: string;
+    publicRepos: string;
+    share: string;
+  };
 }

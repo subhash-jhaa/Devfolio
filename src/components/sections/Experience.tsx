@@ -6,7 +6,7 @@ import { portfolioData } from "@/components/constants/data";
 export const Experience = () => {
   return (
     <section className="pt-4" aria-label="Work experience">
-      <h2 className="mb-4 text-base font-bold text-gray-900 text-left">Work Experience</h2>
+      <h2 className="mb-4 text-base font-bold text-gray-900 text-left">{portfolioData.titles.experience}</h2>
       <div className="relative">
         <div className="absolute left-3 top-0 bottom-0 w-px bg-gray-100"></div>
         <div className="space-y-4">

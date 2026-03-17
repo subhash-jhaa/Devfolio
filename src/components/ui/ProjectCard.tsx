@@ -1,10 +1,12 @@
 "use client";
 
 import React from 'react';
+import { portfolioData } from '@/components/constants/data';
 import { Users, Code2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { TechIcon } from './TechIcon';
 import { Project } from '@/types';
+import { portfolioData } from '@/components/constants/data';
 
 interface ProjectCardProps {
   project: Project;
@@ -56,7 +58,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <div className="mb-2">
           <div className="flex items-center gap-1 mb-1.5">
             <Code2 className="h-3 w-3 text-gray-500" aria-hidden="true" />
-            <span className="text-[9px] font-medium text-gray-500 uppercase tracking-wide">Tech Stack</span>
+            <span className="text-[9px] font-medium text-gray-500 uppercase tracking-wide">{portfolioData.labels.techStack}</span>
           </div>
           <div className="flex flex-wrap gap-1.5">
             {project.techStack.map((tech) => (

@@ -30,7 +30,7 @@ export const Sidebar: React.FC = () => {
         {/* Download CV */}
         <div style={{ opacity: 1, transform: 'none' }}>
           <a href={portfolioData.cvUrl} target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-between bg-white border border-gray-200 rounded-xl px-4 py-2.5 hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 shadow-sm" tabIndex={0}>
-            <span className="text-sm font-semibold text-gray-700">Download CV</span>
+            <span className="text-sm font-semibold text-gray-700">{portfolioData.labels.downloadCv}</span>
             <div className="bg-gray-100 rounded-lg p-1.5 flex items-center justify-center">
               <Download className="h-4 w-4 text-gray-600" aria-hidden="true" />
             </div>
