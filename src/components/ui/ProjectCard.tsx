@@ -13,8 +13,8 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <article className="group relative flex cursor-pointer" style={{ width: '374.67px', height: '230px', opacity: 1, transform: 'none' }}>
-      <div className="relative flex w-full h-full flex-col rounded-2xl border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-3 xs:p-4 sm:p-4 transition-all duration-300 hover:border-gray-300 dark:hover:border-zinc-500 hover:shadow-xl hover:-translate-y-1 shadow-sm">
+    <article className="group relative flex cursor-pointer w-full" style={{ opacity: 1, transform: 'none' }}>
+      <div className="relative flex w-full min-h-[180px] sm:min-h-[230px] flex-col rounded-2xl border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-4 transition-all duration-300 hover:border-gray-300 dark:hover:border-zinc-500 hover:shadow-xl hover:-translate-y-1 shadow-sm">
         <div className="flex items-center justify-between mb-3">
           <div className="w-6 h-6 text-xs bg-white dark:bg-zinc-700 overflow-hidden">
             {project.logo.length === 1 ? (

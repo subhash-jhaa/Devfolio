@@ -7,13 +7,11 @@ export const Experience = () => {
   return (
     <section className="pt-4" aria-label="Work experience">
       <h2 className="mb-4 text-base font-bold text-gray-900 dark:text-zinc-100 text-left">{portfolioData.titles.experience}</h2>
-      <div className="relative">
-        <div className="absolute left-3 top-0 bottom-0 w-px bg-gray-100 dark:bg-zinc-700"></div>
-        <div className="space-y-4">
-          {portfolioData.experience.map((exp, i) => (
-            <div key={i} className="relative pl-8">
-              {/* dot removed */}
-              <div className="rounded-2xl border border-gray-100 dark:border-zinc-700 bg-white dark:bg-zinc-800/60 p-4 shadow-sm hover:shadow-md transition-shadow">
+      <div className="space-y-4">
+        {portfolioData.experience.map((exp, i) => (
+          <div key={i} className="relative">
+            {/* dot removed */}
+            <div className="rounded-2xl border border-gray-100 dark:border-zinc-700 bg-white dark:bg-zinc-800/60 p-4 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white dark:bg-zinc-700 flex-shrink-0 border border-gray-200 dark:border-zinc-600 shadow-sm">
                     <img alt={exp.company} className="h-6 w-6 object-contain" src={exp.logo} />
@@ -29,7 +27,6 @@ export const Experience = () => {
             </div>
           ))}
         </div>
-      </div>
     </section>
   );
 };
