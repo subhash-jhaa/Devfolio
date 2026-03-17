@@ -1,15 +1,17 @@
-export const portfolioData = {
+import { PortfolioData } from "@/types";
+
+export const portfolioData: PortfolioData = {
   name: "Subhash Jha",
   role: "Full stack developer / Javascript is <3",
   bio: "I build robust, scalable applications with a focus on user experience and performance.",
-  profilePic: "https://github.com/subhash-jhaa.png", // Using GitHub avatar as source
+  profilePic: "https://github.com/subhash-jhaa.png",
   cvUrl: "#",
   socials: [
     { platform: "mail", url: "mailto:subhashkumarjha162@gmail.com" },
     { platform: "github", url: "https://github.com/subhash-jhaa" },
     { platform: "instagram", url: "#" },
     { platform: "linkedin", url: "https://www.linkedin.com/in/subhashdev" },
-    { platform: "website", url:"https://www.linkedin.com/in/subhashdev" },
+    { platform: "website", url: "https://www.linkedin.com/in/subhashdev" },
     { platform: "x", url: "https://x.com/subhash_jh" },
   ],
   skills: [
@@ -36,7 +38,7 @@ export const portfolioData = {
       role: "Software Developer Intern",
       duration: "Jan 2026 - Feb 2026",
       logo: "https://www.google.com/s2/favicons?domain=bluestockfintech.com&sz=64",
-    }
+    },
   ],
   projects: [
     {
@@ -45,8 +47,8 @@ export const portfolioData = {
       status: "Live",
       users: 100,
       techStack: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind"],
-      logo: '/shortiq/logo.svg',
-      color: "#fb7185"
+      logo: "/shortiq/logo.svg",
+      color: "#fb7185",
     },
     {
       name: "Invest IQ : AI-Powered Investment Assistant",
@@ -55,7 +57,7 @@ export const portfolioData = {
       users: 100,
       techStack: ["React", "JavaScript", "Gemini AI", "Tailwind", "Appwrite"],
       logo: "/investiq.logo.png",
-      color: "black"
+      color: "black",
     },
     {
       name: "DevEvent - Community Event Discovery and Booking Platform",
@@ -63,16 +65,16 @@ export const portfolioData = {
       status: "Building",
       techStack: ["Next.js", "TypeScript", "Tailwind", "MongoDB", "Clerk auth", "Radix UI"],
       logo: "D",
-      color: "grey"
+      color: "grey",
     },
     {
       name: "Chatly",
       description: "A real-time chat app that lets users start conversations, send messages instantly, and stay connected with live typing and presence updates.",
-      techStack: ["TypeScript", "Next.js", "Tailwind CSS", "Convex", "Clerk", "Shadcn UI",],
+      techStack: ["TypeScript", "Next.js", "Tailwind CSS", "Convex", "Clerk", "Shadcn UI"],
       status: "Building",
       logo: "C",
-      color: "grey"
-    }
+      color: "grey",
+    },
   ],
   githubStats: {
     username: "subhash-jhaa",
@@ -85,7 +87,7 @@ export const portfolioData = {
       language: "TypeScript",
       stars: 0,
       forks: 0,
-      url: "https://github.com/subhash-jhaa/ShortIQ"
+      url: "https://github.com/subhash-jhaa/ShortIQ",
     },
     {
       name: "Invest-IQ",
@@ -93,7 +95,7 @@ export const portfolioData = {
       language: "JavaScript",
       stars: 1,
       forks: 0,
-      url: "https://github.com/subhash-jhaa/Invest-IQ"
+      url: "https://github.com/subhash-jhaa/Invest-IQ",
     },
     {
       name: "Dev-Events",
@@ -101,7 +103,7 @@ export const portfolioData = {
       language: "TypeScript",
       stars: 1,
       forks: 0,
-      url: "https://github.com/subhash-jhaa/Dev-Events"
-    }
-  ]
+      url: "https://github.com/subhash-jhaa/Dev-Events",
+    },
+  ],
 };

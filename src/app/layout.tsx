@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import "./globals.css";
-import { Background } from "@/components/Background";
+import { Background } from "@/components/layout/Background";
 
 export const metadata: Metadata = {
   title: "Subhash Jha | Full Stack Developer",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 
-import { ThemeProvider } from "@/components/ThemeProvider";
+import { ThemeProvider } from "@/components/layout/ThemeProvider";
 
 export default function RootLayout({
   children,

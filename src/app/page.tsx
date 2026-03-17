@@ -1,5 +1,7 @@
-import { Sidebar } from "@/components/Sidebar";
-import { MainContent } from "@/components/MainContent";
+import { Sidebar } from "@/components/layout/Sidebar";
+import { Projects } from "@/components/sections/Projects";
+import { GitHub } from "@/components/sections/GitHub";
+import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -8,7 +10,11 @@ export default function Home() {
         <Sidebar />
       </div>
       <div className="lg:col-span-7 xl:col-span-8">
-        <MainContent />
+        <main className="flex-1 p-4 lg:p-6 lg:pl-0 space-y-8">
+          <Projects />
+          <GitHub />
+          <Footer />
+        </main>
       </div>
     </div>
   );

@@ -1,21 +1,13 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Users, Code2, Code, Database, Layers } from 'lucide-react';
+import { Users, Code2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { TechIcon } from './TechIcon';
+import { Project } from '@/types';
 
 interface ProjectCardProps {
-  project: {
-    name: string;
-    description: string;
-    status?: string;
-    users?: number;
-    techStack: string[];
-    logo: string;
-    color: string;
-  };
+  project: Project;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
@@ -79,4 +71,3 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     </article>
   );
 };
-

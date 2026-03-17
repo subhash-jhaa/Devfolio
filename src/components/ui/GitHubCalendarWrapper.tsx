@@ -12,13 +12,12 @@ const GITHUB_THEME = {
   dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
 };
 
-// --- Constants for Grid Calculation ---
 const TOTAL_WEEKS = 53;
 const GAPS = TOTAL_WEEKS - 1;
 const DEFAULT_BLOCK_SIZE = 9;
 const DEFAULT_BLOCK_MARGIN = 2;
 const MARGIN_RATIO = DEFAULT_BLOCK_MARGIN / DEFAULT_BLOCK_SIZE;
-const PADDING_OFFSET = 48; // accounts for card's left+right padding/ 0.222...
+const PADDING_OFFSET = 48;
 
 export const GitHubCalendarWrapper = ({ username }: Props) => {
   const [mounted, setMounted] = React.useState(false);
@@ -33,20 +32,18 @@ export const GitHubCalendarWrapper = ({ username }: Props) => {
     const container = containerRef.current;
     if (!container) return;
 
-   const calculateDimensions = (width: number) => {
-  if (width <= 0) return;
+    const calculateDimensions = (width: number) => {
+      if (width <= 0) return;
+      const availableWidth = width - PADDING_OFFSET;
+      const denominator = TOTAL_WEEKS + GAPS * MARGIN_RATIO;
+      const blockSize = Math.floor((availableWidth / denominator) * 10) / 10;
+      const blockMargin = Math.floor((blockSize * MARGIN_RATIO) * 10) / 10;
 
-  const availableWidth = width - PADDING_OFFSET; // ← subtract padding
-
-  const denominator = TOTAL_WEEKS + GAPS * MARGIN_RATIO;
-  const blockSize = Math.floor((availableWidth / denominator) * 10) / 10;
-  const blockMargin = Math.floor((blockSize * MARGIN_RATIO) * 10) / 10;
-
-  setDimensions({
-    blockSize,
-    blockMargin,
-  });
-};
+      setDimensions({
+        blockSize,
+        blockMargin,
+      });
+    };
 
     const observer = new ResizeObserver((entries) => {
       for (const entry of entries) {
