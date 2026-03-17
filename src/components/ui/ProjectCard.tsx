@@ -6,7 +6,6 @@ import { Users, Code2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { TechIcon } from './TechIcon';
 import { Project } from '@/types';
-import { portfolioData } from '@/components/constants/data';
 
 interface ProjectCardProps {
   project: Project;

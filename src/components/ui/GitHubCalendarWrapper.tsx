@@ -66,10 +66,7 @@ export const GitHubCalendarWrapper = ({ username }: Props) => {
           fontSize={12}
           blockSize={dimensions.blockSize}
           blockMargin={dimensions.blockMargin}
-          showWeekdayLabels={['monday', 'wednesday', 'friday']}
-          hideColorLegend={true}
-          hideTotalCount={true}
-          loading={false}
+          showWeekdayLabels={true}
         />
       )}
     </div>

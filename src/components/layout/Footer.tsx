@@ -1,4 +1,5 @@
 import React from 'react';
+import { portfolioData } from '@/components/constants/data';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
