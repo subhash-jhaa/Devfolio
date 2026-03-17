@@ -40,6 +40,12 @@ export const GitHubCalendarWrapper = ({ username }: Props) => {
 
     const calculateDimensions = (width: number) => {
       if (width <= 0) return;
+      
+      // Only calculate dynamic dimensions on larger screens (md+)
+      const isDesktop = window.innerWidth >= 768; // md breakpoint
+      
+      if (!isDesktop) return;
+      
       const availableWidth = width - PADDING_OFFSET;
       const denominator = TOTAL_WEEKS + GAPS * MARGIN_RATIO;
       const blockSize = Math.floor((availableWidth / denominator) * 10) / 10;
@@ -66,19 +72,39 @@ export const GitHubCalendarWrapper = ({ username }: Props) => {
   return (
     <div 
       ref={containerRef} 
-      className="w-full bg-white dark:bg-transparent border border-zinc-200 dark:border-transparent rounded-2xl p-0 shadow-sm dark:shadow-none"
+      className="w-full bg-white dark:bg-transparent border border-zinc-200 dark:border-transparent rounded-2xl p-2 shadow-sm dark:shadow-none"
     >
-      {mounted && (
-        <GitHubCalendar
-          username={username}
-          theme={GITHUB_THEME}
-          colorScheme={resolvedTheme === 'dark' ? 'dark' : 'light'}
-          fontSize={12}
-          blockSize={dimensions.blockSize}
-          blockMargin={dimensions.blockMargin}
-          showWeekdayLabels={true}
-        />
-      )}
+      {/* Mobile: horizontal scroll */}
+      <div className="block md:hidden overflow-x-auto scrollbar-hide">
+        <div className="min-w-[600px]">
+          {mounted && (
+            <GitHubCalendar
+              username={username}
+              theme={GITHUB_THEME}
+              colorScheme={resolvedTheme === 'dark' ? 'dark' : 'light'}
+              fontSize={12}
+              blockSize={11}
+              blockMargin={2}
+              showWeekdayLabels={true}
+            />
+          )}
+        </div>
+      </div>
+
+      {/* Desktop: normal, no scroll */}
+      <div className="hidden md:block">
+        {mounted && (
+          <GitHubCalendar
+            username={username}
+            theme={GITHUB_THEME}
+            colorScheme={resolvedTheme === 'dark' ? 'dark' : 'light'}
+            fontSize={12}
+            blockSize={dimensions.blockSize}
+            blockMargin={dimensions.blockMargin}
+            showWeekdayLabels={true}
+          />
+        )}
+      </div>
     </div>
   );
 };
