@@ -1,0 +1,107 @@
+export const portfolioData = {
+  name: "Subhash Jha",
+  role: "Full stack developer / Javascript is <3",
+  bio: "I build robust, scalable applications with a focus on user experience and performance.",
+  profilePic: "https://github.com/subhash-jhaa.png", // Using GitHub avatar as source
+  cvUrl: "#",
+  socials: [
+    { platform: "mail", url: "mailto:subhashkumarjha162@gmail.com" },
+    { platform: "github", url: "https://github.com/subhash-jhaa" },
+    { platform: "instagram", url: "#" },
+    { platform: "linkedin", url: "https://www.linkedin.com/in/subhashdev" },
+    { platform: "website", url:"https://www.linkedin.com/in/subhashdev" },
+    { platform: "x", url: "https://x.com/subhash_jh" },
+  ],
+  skills: [
+    { name: "AWS", category: "Cloud" },
+    { name: "CSS3", category: "Frontend" },
+    { name: "Docker", category: "DevOps" },
+    { name: "Express.js", category: "Backend" },
+    { name: "JavaScript", category: "Frontend" },
+    { name: "Material UI", category: "Frontend" },
+    { name: "Next.js", category: "Frontend" },
+    { name: "Node.js", category: "Backend" },
+    { name: "Nuxt.js", category: "Frontend" },
+    { name: "Python", category: "Backend" },
+    { name: "React", category: "Frontend" },
+    { name: "Sass", category: "Frontend" },
+    { name: "Svelte", category: "Frontend" },
+    { name: "Tailwind CSS", category: "Frontend" },
+    { name: "TypeScript", category: "Frontend" },
+    { name: "Vercel", category: "DevOps" },
+  ],
+  experience: [
+    {
+      company: "BlueStock Fintech",
+      role: "Software Developer Intern",
+      duration: "Jan 2026 - Feb 2026",
+      logo: "https://www.google.com/s2/favicons?domain=bluestockfintech.com&sz=64",
+    }
+  ],
+  projects: [
+    {
+      name: "ShortIQ: AI Faceless Content Engine",
+      description: "An AI-powered automation platform that empowers creators to build and scale faceless content empires through seamless script generation, high-performance rendering, and direct social media publishing.",
+      status: "Live",
+      users: 100,
+      techStack: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind"],
+      logo: '/shortiq/logo.svg',
+      color: "#fb7185"
+    },
+    {
+      name: "Invest IQ : AI-Powered Investment Assistant",
+      description: "An AI-powered personal finance assistant that simplifies investment planning and goal-tracking using Google Gemini AI, interactive calculators, and real-time market insights.",
+      status: "Live",
+      users: 100,
+      techStack: ["React", "JavaScript", "Gemini AI", "Tailwind", "Appwrite"],
+      logo: "/investiq.logo.png",
+      color: "black"
+    },
+    {
+      name: "DevEvent - Community Event Discovery and Booking Platform",
+      description: "A full-stack web app where users can create, explore, and book community events with secure authentication, email workflows, and product analytics.",
+      status: "Building",
+      techStack: ["Next.js", "TypeScript", "Tailwind", "MongoDB", "Clerk auth", "Radix UI"],
+      logo: "D",
+      color: "grey"
+    },
+    {
+      name: "Chatly",
+      description: "A real-time chat app that lets users start conversations, send messages instantly, and stay connected with live typing and presence updates.",
+      techStack: ["TypeScript", "Next.js", "Tailwind CSS", "Convex", "Clerk", "Shadcn UI",],
+      status: "Building",
+      logo: "C",
+      color: "grey"
+    }
+  ],
+  githubStats: {
+    username: "subhash-jhaa",
+    totalContributions: 1586,
+  },
+  pinnedRepositories: [
+    {
+      name: "ShortIQ",
+      description: "AI Short Video Generator And Scheduler",
+      language: "TypeScript",
+      stars: 0,
+      forks: 0,
+      url: "https://github.com/subhash-jhaa/ShortIQ"
+    },
+    {
+      name: "Invest-IQ",
+      description: "Ai powered finance Management Syatem",
+      language: "JavaScript",
+      stars: 1,
+      forks: 0,
+      url: "https://github.com/subhash-jhaa/Invest-IQ"
+    },
+    {
+      name: "Dev-Events",
+      description: "The Hub Every Dev Event you Mustn't Miss",
+      language: "TypeScript",
+      stars: 1,
+      forks: 0,
+      url: "https://github.com/subhash-jhaa/Dev-Events"
+    }
+  ]
+};
