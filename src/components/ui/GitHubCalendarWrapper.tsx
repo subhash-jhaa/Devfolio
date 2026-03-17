@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { GitHubCalendar } from 'react-github-calendar';
+import { portfolioData } from '@/components/constants/data';
+import { useTheme } from 'next-themes';
 
 interface Props {
   username: string;
@@ -12,14 +14,18 @@ const GITHUB_THEME = {
   dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
 };
 
-const TOTAL_WEEKS = 53;
+const {
+  totalWeeks: TOTAL_WEEKS,
+  defaultBlockSize: DEFAULT_BLOCK_SIZE,
+  defaultBlockMargin: DEFAULT_BLOCK_MARGIN,
+  paddingOffset: PADDING_OFFSET,
+} = portfolioData.githubCalendarConfig;
+
 const GAPS = TOTAL_WEEKS - 1;
-const DEFAULT_BLOCK_SIZE = 9;
-const DEFAULT_BLOCK_MARGIN = 2;
 const MARGIN_RATIO = DEFAULT_BLOCK_MARGIN / DEFAULT_BLOCK_SIZE;
-const PADDING_OFFSET = 48;
 
 export const GitHubCalendarWrapper = ({ username }: Props) => {
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
   const [dimensions, setDimensions] = React.useState({ 
     blockSize: DEFAULT_BLOCK_SIZE, 
@@ -58,11 +64,15 @@ export const GitHubCalendarWrapper = ({ username }: Props) => {
   }, []);
 
   return (
-    <div ref={containerRef} className="w-full">
+    <div 
+      ref={containerRef} 
+      className="w-full bg-white dark:bg-transparent border border-zinc-200 dark:border-transparent rounded-2xl p-0 shadow-sm dark:shadow-none"
+    >
       {mounted && (
         <GitHubCalendar
           username={username}
           theme={GITHUB_THEME}
+          colorScheme={resolvedTheme === 'dark' ? 'dark' : 'light'}
           fontSize={12}
           blockSize={dimensions.blockSize}
           blockMargin={dimensions.blockMargin}

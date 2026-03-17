@@ -10,7 +10,7 @@ export const Hero = () => {
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        className="relative flex shrink-0 overflow-hidden rounded-full w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 border-4 border-cyan-400/30 bg-white shadow-xl"
+        className="relative flex shrink-0 overflow-hidden rounded-full w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 border-4 border-cyan-400/30 bg-white dark:bg-zinc-800 shadow-xl"
       >
         <img
           alt={portfolioData.name}
@@ -19,10 +19,10 @@ export const Hero = () => {
         />
       </motion.div>
       <div className="space-y-1">
-        <h1 className="text-2xl font-bold text-gray-800 leading-tight">
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-zinc-100 leading-tight">
           {portfolioData.name}
         </h1>
-        <p className="text-sm sm:text-base text-gray-500 font-medium">
+        <p className="text-sm sm:text-base text-gray-500 dark:text-zinc-400 font-medium">
           {portfolioData.role}
         </p>
       </div>

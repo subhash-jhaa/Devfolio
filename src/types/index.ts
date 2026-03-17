@@ -40,7 +40,17 @@ export interface PinnedRepo {
   url: string;
 }
 
+export interface SiteMetadata {
+  title: string;
+  description: string;
+  keywords: string;
+  author: string;
+  siteName: string;
+  url: string;
+}
+
 export interface PortfolioData {
+  metadata: SiteMetadata;
   name: string;
   role: string;
   bio: string;
@@ -64,7 +74,25 @@ export interface PortfolioData {
     techStack: string;
     contributions: string;
     pinned: string;
-    publicRepos: string;
     share: string;
+    copyright: string;
+    toggleTheme: string;
+    lightMode: string;
+    darkMode: string;
+    visitProfile: string;
+    cvAriaLabel: string;
+    socialsAriaLabel: string;
+    projectIconAlt: string;
+  };
+  techIconMapping: Record<string, string>;
+  githubCalendarConfig: {
+    theme: {
+      light: string[];
+      dark: string[];
+    };
+    totalWeeks: number;
+    defaultBlockSize: number;
+    defaultBlockMargin: number;
+    paddingOffset: number;
   };
 }

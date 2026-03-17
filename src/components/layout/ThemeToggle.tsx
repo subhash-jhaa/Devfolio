@@ -1,48 +1,36 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { useTheme } from "next-themes";
-import { Moon, Sun } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { useTheme } from 'next-themes';
+import { Sun, Moon } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 export function ThemeToggle() {
-  const { setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = React.useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setMounted(true);
   }, []);
 
   if (!mounted) {
     return (
-      <button className="p-2.5 rounded-xl bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 text-gray-700 dark:text-gray-300 shadow-sm w-[38px] h-[38px] flex items-center justify-center opacity-0"></button>
+      <button className="p-2.5 rounded-xl bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 w-[38px] h-[38px] flex items-center justify-center opacity-0" />
     );
   }
 
-  const isDark = resolvedTheme === "dark";
+  const isDark = theme === 'dark';
 
   return (
     <button
-      onClick={() => setTheme(isDark ? "light" : "dark")}
-      className={cn(
-        "p-2.5 rounded-xl bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 hover:text-gray-900 hover:border-gray-300 transition-all duration-300 shadow-sm hover:shadow-md flex items-center justify-center overflow-hidden w-[38px] h-[38px]"
-      )}
-      aria-label="Toggle theme"
+      onClick={() => setTheme(isDark ? 'light' : 'dark')}
+      className="p-2.5 rounded-xl bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 text-gray-700 dark:text-zinc-300 hover:bg-gray-50 dark:hover:bg-zinc-700 hover:text-gray-900 dark:hover:text-zinc-100 hover:border-gray-300 dark:hover:border-zinc-500 transition-all duration-300 shadow-sm hover:shadow-md flex items-center justify-center w-[38px] h-[38px]"
+      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
     >
-      <div className="relative flex items-center justify-center w-full h-full">
-        <Sun
-          className={cn(
-            "absolute w-4 h-4 transition-all duration-300",
-            isDark ? "opacity-0 -rotate-90 scale-50" : "opacity-100 rotate-0 scale-100"
-          )}
-        />
-        <Moon
-          className={cn(
-            "absolute w-4 h-4 transition-all duration-300",
-            isDark ? "opacity-100 rotate-0 scale-100" : "opacity-0 rotate-90 scale-50"
-          )}
-        />
-      </div>
+      {isDark ? (
+        <Sun className="w-4 h-4 transition-transform duration-300 rotate-0 scale-100" />
+      ) : (
+        <Moon className="w-4 h-4 transition-transform duration-300 rotate-0 scale-100" />
+      )}
     </button>
   );
 }
