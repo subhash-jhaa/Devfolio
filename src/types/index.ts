@@ -55,6 +55,7 @@ export interface PortfolioData {
   role: string;
   bio: string;
   profilePic: string;
+  email: string;
   cvUrl: string;
   socials: Social[];
   skills: Skill[];
@@ -62,6 +63,21 @@ export interface PortfolioData {
   projects: Project[];
   githubStats: GitHubStats;
   pinnedRepositories: PinnedRepo[];
+  contact: {
+    title: string;
+    nameLabel: string;
+    namePlaceholder: string;
+    emailLabel: string;
+    emailPlaceholder: string;
+    subjectLabel: string;
+    subjectPlaceholder: string;
+    messageLabel: string;
+    messagePlaceholder: string;
+    buttonIdle: string;
+    buttonSending: string;
+    successMessage: string;
+    replyWaitTime: string;
+  };
   titles: {
     skills: string;
     experience: string;
@@ -83,8 +99,8 @@ export interface PortfolioData {
     cvAriaLabel: string;
     socialsAriaLabel: string;
     projectIconAlt: string;
+    shareSuccess: string;
   };
-  techIconMapping: Record<string, string>;
   githubCalendarConfig: {
     theme: {
       light: string[];
