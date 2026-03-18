@@ -14,7 +14,7 @@ export const portfolioData: PortfolioData = {
   bio: "I build robust, scalable applications with a focus on user experience and performance.",
   profilePic: "https://github.com/subhash-jhaa.png",
   email: "subhashkumarjha162@gmail.com",
-  cvUrl: "#",
+  cvUrl: "/subhash_jha_resume.pdf",
   socials: [
     { platform: "mail", url: "mailto:subhashkumarjha162@gmail.com" },
     { platform: "github", url: "https://github.com/subhash-jhaa" },

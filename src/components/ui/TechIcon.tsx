@@ -35,7 +35,7 @@ export const TechIcon: React.FC<TechIconProps> = ({
   // Brand color by default — for monochrome icons (black logos), invert in dark mode so they stay visible
   const iconUrl = tech.fallbackUrl || `https://cdn.simpleicons.org/${tech.slug}`;
   const imgClass = cn(
-    'object-contain transition-all duration-200',
+    'object-contain',
     tech.monochrome && 'dark:invert',
     className
   );

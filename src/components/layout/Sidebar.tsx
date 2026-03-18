@@ -28,7 +28,7 @@ export const Sidebar: React.FC = () => {
 
         {/* Download CV */}
         <div style={{ opacity: 1, transform: 'none' }}>
-          <a href={portfolioData.cvUrl} target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-between bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-xl px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-zinc-700 hover:border-gray-300 dark:hover:border-zinc-500 transition-all duration-300 shadow-sm hover:shadow-md" aria-label={portfolioData.labels.cvAriaLabel} tabIndex={0}>
+          <a href={portfolioData.cvUrl} target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-between bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-xl px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-zinc-700 hover:border-gray-300 dark:hover:border-zinc-500 shadow-sm hover:shadow-md" aria-label={portfolioData.labels.cvAriaLabel} tabIndex={0}>
             <span className="text-sm font-semibold text-gray-700 dark:text-zinc-200">{portfolioData.labels.downloadCv}</span>
             <div className="bg-white dark:bg-zinc-700 border border-gray-100 dark:border-transparent rounded-lg p-1.5 flex items-center justify-center shadow-inner">
               <Download className="h-4 w-4 text-gray-600 dark:text-zinc-300" aria-hidden="true" />
@@ -45,7 +45,7 @@ export const Sidebar: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                "p-2.5 rounded-xl bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 text-gray-700 dark:text-zinc-300 hover:bg-gray-50 dark:hover:bg-zinc-700 hover:text-gray-900 dark:hover:text-zinc-100 hover:border-gray-300 dark:hover:border-zinc-500 transition-all duration-300 shadow-sm",
+                "p-2.5 rounded-xl bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 text-gray-700 dark:text-zinc-300 hover:bg-gray-50 dark:hover:bg-zinc-700 hover:text-gray-900 dark:hover:text-zinc-100 hover:border-gray-300 dark:hover:border-zinc-500 shadow-sm",
                 social.platform === 'instagram' ? "hover:shadow-lg hover:shadow-purple-500/20" :
                   social.platform === 'linkedin' ? "hover:shadow-lg hover:shadow-blue-600/20" : "hover:shadow-md"
               )}

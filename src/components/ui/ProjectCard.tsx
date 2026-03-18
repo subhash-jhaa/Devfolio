@@ -14,7 +14,7 @@ interface ProjectCardProps {
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <article className="group relative flex cursor-pointer w-full" style={{ opacity: 1, transform: 'none' }}>
-      <div className="relative flex w-full min-h-[180px] sm:min-h-[230px] flex-col rounded-2xl border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-4 transition-all duration-300 hover:border-gray-300 dark:hover:border-zinc-500 hover:shadow-xl hover:-translate-y-1 shadow-sm">
+      <div className="relative flex w-full min-h-[180px] sm:min-h-[230px] flex-col rounded-2xl border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-4 hover:border-gray-300 dark:hover:border-zinc-500 hover:shadow-xl shadow-sm">
         <div className="flex items-center justify-between mb-3">
           <div className="w-6 h-6 text-xs bg-white dark:bg-zinc-700 overflow-hidden">
             {project.logo.length === 1 ? (
@@ -39,8 +39,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                   project.status === 'Live' ? "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800" :
                     "bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 border-blue-200 dark:border-blue-800"
               )}>
-                {project.status === 'Building' && <span className="w-1.5 h-1.5 rounded-full bg-green-500 mr-1.5 animate-pulse" />}
-                {project.status === 'Live' && <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse" />}
+                {project.status === 'Building' && <span className="w-1.5 h-1.5 rounded-full bg-green-500 mr-1.5" />}
+                {project.status === 'Live' && <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5" />}
                 {project.status}
               </span>
             )}

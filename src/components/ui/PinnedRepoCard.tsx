@@ -10,15 +10,15 @@ export const PinnedRepoCard: React.FC<PinnedRepoCardProps> = ({ repo }) => (
     href={repo.url}
     target="_blank"
     rel="noopener noreferrer"
-    className="group flex min-h-[120px] flex-col rounded-xl border p-3 transition-all duration-200 hover:-translate-y-1 hover:shadow-md sm:min-h-[140px] sm:p-4 border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:border-gray-300 dark:hover:border-zinc-500 shadow-sm"
+    className="group flex min-h-[120px] flex-col rounded-xl border p-3 hover:shadow-md sm:min-h-[140px] sm:p-4 border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:border-gray-300 dark:hover:border-zinc-500 shadow-sm"
   >
     <div className="mb-2 flex items-start justify-between">
       <div className="min-w-0 flex-1 pr-2">
-        <h4 className="truncate text-sm font-semibold transition-colors sm:text-base text-gray-900 dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-blue-400">
+        <h4 className="truncate text-sm font-semibold sm:text-base text-gray-900 dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-blue-400">
           {repo.name}
         </h4>
       </div>
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-external-link h-3 w-3 flex-shrink-0 transition-colors sm:h-4 sm:w-4 text-gray-500 dark:text-zinc-400 group-hover:text-blue-600 dark:group-hover:text-blue-400">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-external-link h-3 w-3 flex-shrink-0 sm:h-4 sm:w-4 text-gray-500 dark:text-zinc-400 group-hover:text-blue-600 dark:group-hover:text-blue-400">
         <path d="M15 3h6v6"></path>
         <path d="M10 14 21 3"></path>
         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
