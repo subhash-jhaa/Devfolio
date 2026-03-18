@@ -64,6 +64,7 @@ export interface PortfolioData {
   githubStats: GitHubStats;
   pinnedRepositories: PinnedRepo[];
   contact: {
+    formspreeUrl: string;
     title: string;
     nameLabel: string;
     namePlaceholder: string;

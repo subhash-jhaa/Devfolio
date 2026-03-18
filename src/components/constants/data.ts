@@ -126,6 +126,7 @@ export const portfolioData: PortfolioData = {
 
   ],
   contact: {
+    formspreeUrl: "https://formspree.io/f/xnjglgja",
     title: "subhash.contact() — let's build something",
     nameLabel: "Name",
     namePlaceholder: "Your name",

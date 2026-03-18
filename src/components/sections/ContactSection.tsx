@@ -27,30 +27,56 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    const newErrors = {
+    // Validate required fields
+    const hasErrors = {
       name: !form.name.trim(),
       email: !form.email.trim(),
       message: !form.message.trim(),
     };
 
-    setErrors(newErrors);
-
-    if (newErrors.name || newErrors.email || newErrors.message) {
+    if (Object.values(hasErrors).some(Boolean)) {
+      setErrors(hasErrors);
       return;
     }
 
+    setErrors({ name: false, email: false, message: false });
     setStatus('sending');
-    
-    // Simulate API call (Resend implementation coming next)
-    setTimeout(() => {
-      setStatus('sent');
-      setForm({ name: '', email: '', subject: '', message: '' });
-      
-      // Reset to idle state after 10 seconds
-      setTimeout(() => {
-        setStatus('idle');
-      }, 10000);
-    }, 800);
+
+    try {
+      const res = await fetch(portfolioData.contact.formspreeUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          subject: form.subject || 'No subject',
+          message: form.message,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setStatus('sent');
+        setForm({ name: '', email: '', subject: '', message: '' });
+
+        // Reset to idle state after 10 seconds
+        setTimeout(() => {
+          setStatus('idle');
+        }, 10000);
+      } else {
+        // Formspree returns errors array
+        throw new Error(data?.errors?.[0]?.message || 'Failed');
+      }
+
+    } catch (error) {
+      console.error('Formspree error:', error);
+      setStatus('idle');
+      alert('Something went wrong. Please try again.');
+    }
   };
 
   return (
@@ -165,21 +191,21 @@ export default function ContactSection() {
           {portfolioData.socials
             .filter(social => ['github', 'linkedin', 'x'].includes(social.platform))
             .map((social, i) => (
-            <a
-              key={i}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                "p-2.5 rounded-xl bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 text-gray-700 dark:text-zinc-300 hover:bg-gray-50 dark:hover:bg-zinc-700 hover:text-gray-900 dark:hover:text-zinc-100 hover:border-gray-300 dark:hover:border-zinc-500 shadow-sm",
-                social.platform === 'instagram' ? "hover:shadow-lg hover:shadow-purple-500/20" :
-                social.platform === 'linkedin' ? "hover:shadow-lg hover:shadow-blue-600/20" : "hover:shadow-md"
-              )}
-              aria-label={`Visit ${social.platform} profile`}
-            >
-              {SOCIAL_ICONS[social.platform] || <Globe className="w-4 h-4" />}
-            </a>
-          ))}
+              <a
+                key={i}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  "p-2.5 rounded-xl bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 text-gray-700 dark:text-zinc-300 hover:bg-gray-50 dark:hover:bg-zinc-700 hover:text-gray-900 dark:hover:text-zinc-100 hover:border-gray-300 dark:hover:border-zinc-500 shadow-sm",
+                  social.platform === 'instagram' ? "hover:shadow-lg hover:shadow-purple-500/20" :
+                    social.platform === 'linkedin' ? "hover:shadow-lg hover:shadow-blue-600/20" : "hover:shadow-md"
+                )}
+                aria-label={`Visit ${social.platform} profile`}
+              >
+                {SOCIAL_ICONS[social.platform] || <Globe className="w-4 h-4" />}
+              </a>
+            ))}
         </div>
       </div>
     </div>
