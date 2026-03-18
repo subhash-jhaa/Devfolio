@@ -7,14 +7,15 @@ export type TechIconEntry = {
   slug: string;          // simpleicons.org slug
   label: string;         // display name
   monochrome?: boolean;  // true = icon is black by default, needs color override
+  fallbackUrl?: string;  // direct url to svg if cdn.simpleicons.org is missing it
 };
 
 export const techIconMap: Record<string, TechIconEntry> = {
   // --- Frontend ---
   'html':          { slug: 'html5',          label: 'HTML5' },
   'html5':         { slug: 'html5',          label: 'HTML5' },
-  'css':           { slug: 'css3',           label: 'CSS3' },
-  'css3':          { slug: 'css3',           label: 'CSS3' },
+  'css':           { slug: 'css',            label: 'CSS3' },
+  'css3':          { slug: 'css',            label: 'CSS3' },
   'javascript':    { slug: 'javascript',     label: 'JavaScript' },
   'typescript':    { slug: 'typescript',     label: 'TypeScript' },
   'react':         { slug: 'react',          label: 'React' },
@@ -45,12 +46,12 @@ export const techIconMap: Record<string, TechIconEntry> = {
   'supabase':      { slug: 'supabase',       label: 'Supabase' },
   'firebase':      { slug: 'firebase',       label: 'Firebase' },
   'appwrite':      { slug: 'appwrite',       label: 'Appwrite' },
-  'convex':        { slug: 'convexpolygon',  label: 'Convex',      monochrome: true },
+  'convex':        { slug: 'convex',         label: 'Convex',      monochrome: true, fallbackUrl: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/convex.svg' },
   'prisma':        { slug: 'prisma',         label: 'Prisma',      monochrome: true },
   'drizzle':       { slug: 'drizzle',        label: 'Drizzle',     monochrome: true },
 
   // --- Cloud & DevOps ---
-  'aws':           { slug: 'amazonaws', label: 'AWS' },
+  'aws':           { slug: 'amazonaws', label: 'AWS', fallbackUrl: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/amazonaws.svg' },
   'docker':        { slug: 'docker',         label: 'Docker' },
   'vercel':        { slug: 'vercel',         label: 'Vercel',      monochrome: true },
   'linux':         { slug: 'linux',          label: 'Linux',       monochrome: true },
