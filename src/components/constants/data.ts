@@ -86,7 +86,7 @@ export const portfolioData: PortfolioData = {
       logo: "D",
       color: "grey",
       url: "https://github.com/subhash-jhaa/DevEvent",
-      githubUrl: "https://github.com/subhash-jhaa/DevEvent",
+      githubUrl: "https://github.com/subhash-jhaa/Dev-Event",
     },
     {
       name: "Chatly",
@@ -96,7 +96,7 @@ export const portfolioData: PortfolioData = {
       logo: "C",
       color: "grey",
       url: "https://chatwithchatly.vercel.app",
-      githubUrl: "https://github.com/subhash-jhaa/Chatly",
+      githubUrl: "https://github.com/subhash-jhaa/chat-with-chatly",
     },
 
   ],

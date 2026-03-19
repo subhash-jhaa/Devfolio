@@ -36,10 +36,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-[10px] font-semibold rounded-full px-2 py-0.5 bg-gray-100 dark:bg-zinc-700 text-gray-700 dark:text-zinc-300 border border-gray-200 dark:border-zinc-600 hover:bg-gray-200 dark:hover:bg-zinc-600 transition-colors whitespace-nowrap"
+                className="inline-flex items-center text-gray-500 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-zinc-100 transition-colors whitespace-nowrap"
               >
-                <Github className="h-2.5 w-2.5 mr-1 flex-shrink-0" />
-                <MoveUpRight className="h-2.5 w-2.5 ml-0.5 flex-shrink-0 opacity-60" />
+                <Github className="h-4 w-4 flex-shrink-0" />
               </a>
             )}
             {project.status && (
