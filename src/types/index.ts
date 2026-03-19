@@ -7,6 +7,7 @@ export interface Project {
   logo: string;
   color: string;
   url?: string;
+  githubUrl?: string;
 }
 
 export interface Experience {

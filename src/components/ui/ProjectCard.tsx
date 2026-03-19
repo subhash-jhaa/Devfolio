@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { portfolioData } from '@/components/constants/data';
-import { Users, Code2 } from 'lucide-react';
+import { Github, MoveUpRight, Code2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { TechIcon } from './TechIcon';
 import { Project } from '@/types';
@@ -16,7 +16,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     <article className="group relative flex cursor-pointer w-full" style={{ opacity: 1, transform: 'none' }}>
       <div className="relative flex w-full min-h-[180px] sm:min-h-[230px] flex-col rounded-2xl border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-4 hover:border-gray-300 dark:hover:border-zinc-500 hover:shadow-xl shadow-sm">
         <div className="flex items-center justify-between mb-3">
-          <div className="w-6 h-6 text-xs bg-white dark:bg-zinc-700 overflow-hidden">
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-6 h-6 text-xs bg-white dark:bg-zinc-700 overflow-hidden hover:opacity-80 transition-opacity"
+          >
             {project.logo.length === 1 ? (
               <div className="w-full h-full flex items-center justify-center font-bold text-slate-400 dark:text-zinc-400 border border-slate-100 dark:border-zinc-600 rounded">
                 {project.logo}
@@ -24,25 +29,35 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             ) : (
               <img alt={`${project.name} ${portfolioData.labels.projectIconAlt}`} className="w-full h-full object-contain p-0.5" src={project.logo} />
             )}
-          </div>
+          </a>
           <div className="flex items-center gap-1.5">
-            {project.users && (
-              <span className="inline-flex items-center text-[10px] font-semibold rounded-full px-2 py-0.5 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800 whitespace-nowrap">
-                <Users className="h-2.5 w-2.5 mr-1 flex-shrink-0" />
-                {project.users}
-              </span>
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-[10px] font-semibold rounded-full px-2 py-0.5 bg-gray-100 dark:bg-zinc-700 text-gray-700 dark:text-zinc-300 border border-gray-200 dark:border-zinc-600 hover:bg-gray-200 dark:hover:bg-zinc-600 transition-colors whitespace-nowrap"
+              >
+                <Github className="h-2.5 w-2.5 mr-1 flex-shrink-0" />
+                <MoveUpRight className="h-2.5 w-2.5 ml-0.5 flex-shrink-0 opacity-60" />
+              </a>
             )}
             {project.status && (
-              <span className={cn(
-                "inline-flex items-center text-[10px] font-semibold rounded-md px-2 py-0.5 border whitespace-nowrap",
-                project.status === 'Building' ? "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 border-green-200 dark:border-green-800" :
-                  project.status === 'Live' ? "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800" :
-                    "bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 border-blue-200 dark:border-blue-800"
-              )}>
+              <a
+                href={project.status === 'Live' ? project.url : undefined}
+                target={project.status === 'Live' ? "_blank" : undefined}
+                rel={project.status === 'Live' ? "noopener noreferrer" : undefined}
+                className={cn(
+                  "inline-flex items-center text-[10px] font-semibold rounded-md px-2 py-0.5 border whitespace-nowrap",
+                  project.status === 'Building' ? "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 border-green-200 dark:border-green-800" :
+                    project.status === 'Live' ? "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800 hover:opacity-80 transition-opacity cursor-pointer" :
+                      "bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 border-blue-200 dark:border-blue-800"
+                )}
+              >
                 {project.status === 'Building' && <span className="w-1.5 h-1.5 rounded-full bg-green-500 mr-1.5" />}
                 {project.status === 'Live' && <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5" />}
                 {project.status}
-              </span>
+              </a>
             )}
           </div>
         </div>
