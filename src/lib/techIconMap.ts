@@ -34,8 +34,12 @@ export const techIconMap: Record<string, TechIconEntry> = {
 
   // --- Backend ---
   'nodejs':        { slug: 'nodedotjs',      label: 'Node.js' },
-  'expressjs':     { slug: 'express',        label: 'Express.js',  monochrome: true },
+  'expressjs':     { slug: 'express',        label: 'Express.js' },
   'python':        { slug: 'python',         label: 'Python' },
+  'cplusplus':     { slug: 'cplusplus',      label: 'C++' },
+  'java':          { slug: 'openjdk',        label: 'Java', fallbackUrl: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg' },
+  'c++':           { slug: 'cplusplus',      label: 'C++' },
+  'c':             { slug: 'c',              label: 'C' },
   'graphql':       { slug: 'graphql',        label: 'GraphQL' },
 
   // --- Database ---
@@ -72,8 +76,11 @@ export const techIconMap: Record<string, TechIconEntry> = {
   'vitest':        { slug: 'vitest',         label: 'Vitest' },
 
   // --- Other ---
-  'github':        { slug: 'github',         label: 'GitHub',      monochrome: true },
   'git':           { slug: 'git',            label: 'Git' },
+  'postman':       { slug: 'postman',        label: 'Postman' },
+  'vscode':        { slug: 'visualstudiocode', label: 'VS Code',fallbackUrl: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/visualstudiocode.svg' },
+  'github':        { slug: 'github',         label: 'GitHub' },
+  'npm':           { slug: 'npm',            label: 'NPM' },
 };
 
 /**

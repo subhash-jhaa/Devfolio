@@ -11,7 +11,7 @@ export const Experience = () => {
         {portfolioData.experience.map((exp, i) => (
           <div key={i} className="relative">
             {/* dot removed */}
-            <div className="rounded-2xl border border-gray-100 dark:border-zinc-700 bg-white dark:bg-zinc-800/60 p-4 shadow-sm hover:shadow-md">
+            <div className="rounded-2xl border border-gray-100 dark:border-zinc-700 bg-white dark:bg-zinc-800/60 p-4 shadow-sm hover:shadow-md hover:border-gray-300 dark:hover:border-zinc-500">
                 <div className="flex items-center gap-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white dark:bg-zinc-700 flex-shrink-0 border border-gray-200 dark:border-zinc-600 shadow-sm">
                     <img alt={exp.company} className="h-6 w-6 object-contain" src={exp.logo} />
