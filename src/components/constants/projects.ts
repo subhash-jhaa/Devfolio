@@ -97,12 +97,60 @@ export const projects: Project[] = [
       { name: 'Tailwind CSS', icon: 'tailwindcss' },
       { name: 'Appwrite', icon: 'appwrite' },
     ],
-    overview: [''],
-
-    implementation: [{ title: 'TODO', description: 'TODO' }],
-    features: [{ title: 'TODO', description: 'TODO' }],
-    screenshots: [{ src: '/shortiq.img.png', alt: 'App', caption: 'TODO' }],
-    challenges: [{ problem: 'TODO', solution: 'TODO' }],
+    overview: [
+      'Invest-IQ is an AI-powered investment assistant built with React, Tailwind CSS, and Gemini AI. It provides personalized fund recommendations based on user risk profiles, capital, and goals. The platform features interactive calculators for SIP, FD, and Mutual Funds with visual charts. Real-time gold price tracking and an AI chatbot (FunBot) offer instant financial guidance. A unique "I\'m 18" mode simplifies complex concepts to help young beginners start investing.'
+    ],
+    implementation: [
+      {
+        title: "Personalized AI Risk Profiling",
+        description: "Developed a custom profiling engine using Google Gemini to analyze user capital and goals, generating tailored investment roadmaps and fund suggestions."
+      },
+      {
+        title: "Real-Time Commodities Integration",
+        description: "Implemented a live tracking system for Gold and Silver prices, providing users with up-to-the-minute market data for diversified portfolio management."
+      },
+      {
+        title: "Interactive Financial Visualizations",
+        description: "Built high-performance SIP, FD, and Mutual Fund calculators with dynamic charting to visualize long-term wealth growth and compound interest."
+      },
+      {
+        title: "Conversational FinTech Interface",
+        description: "Architected 'FunBot', a Gemini-powered chatbot designed to simplify complex financial jargon and provide instant support for investment queries."
+      }
+    ],
+    features: [
+      { title: 'AI Fund Recommendations', description: 'Get personalized investment suggestions based on your specific financial goals and risk tolerance.' },
+      { title: 'Live Gold Tracking', description: 'Monitor real-time gold and silver prices to make informed decisions about your precious metal investments.' },
+      { title: 'Smart Financial Calculators', description: 'Plan your future with interactive SIP, FD, and Mutual Fund calculators featuring visual growth charts.' },
+      { title: 'AI Financial Assistant', description: 'Chat with FunBot to get instant answers to your banking and investment questions in simple language.' },
+      { title: 'Educational "I\'m 18" Mode', description: 'A special mode that breaks down complex financial concepts into easy-to-understand terms for beginners.' },
+      { title: 'Multi-Goal Tracking', description: 'Set and monitor multiple financial targets, from retirement planning to buying your first home.' },
+      { title: 'Scalable Appwrite Backend', description: 'Secure data management and user authentication powered by Appwrite for a reliable investment experience.' }
+    ],
+    screenshots: [
+      { src: '/shortiq.img.png', alt: 'App', caption: 'TODO' },
+      { src: '/shortiq.img.png', alt: 'App', caption: 'TODO' },
+      { src: '/shortiq.img.png', alt: 'App', caption: 'TODO' },
+      { src: '/shortiq.img.png', alt: 'App', caption: 'TODO' }
+    ],
+    challenges: [
+      {
+        problem: "Simplifying complex financial jargon for young users",
+        solution: "Engineered the 'I'm 18' mode using prompt-engineered AI layers to translate technical banking terms into simple, relatable analogies."
+      },
+      {
+        problem: "Ensuring accurate real-time market data delivery",
+        solution: "Integrated specialized financial APIs with a robust polling system to ensure gold and silver prices are always current and reliable."
+      },
+      {
+        problem: "Creating engaging visualizations for dry financial data",
+        solution: "Designed a clean, custom charting interface that transforms raw numbers into intuitive growth curves and distribution maps."
+      },
+      {
+        problem: "Maintaining user trust in AI-driven financial advice",
+        solution: "Implemented a transparent 'Reasoning' layer where the AI explains exactly why a specific fund or strategy was recommended to the user."
+      }
+    ],
   },
 
   {
@@ -180,7 +228,6 @@ export const projects: Project[] = [
       }
     ],
     screenshots: [
-      { src: '/shortiq.img.png', alt: 'Chat', caption: 'TODO' },
       { src: '/shortiq.img.png', alt: 'Chat', caption: 'TODO' },
       { src: '/shortiq.img.png', alt: 'Chat', caption: 'TODO' },
       { src: '/shortiq.img.png', alt: 'Chat', caption: 'TODO' },
