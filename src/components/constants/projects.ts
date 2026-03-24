@@ -88,8 +88,8 @@ export const projects: Project[] = [
     year: '2025',
     liveUrl: 'https://my-investiq.vercel.app',
     repoUrl: 'https://github.com/subhash-jhaa/Invest-Iq',
-    heroImage: '/shortiq.img.png',
-    logoImage: '/investiq.logo.png',
+    heroImage: '/investiq/hero.png',
+    logoImage: '/investiq/investiq.logo.png',
     stack: [
       { name: 'React', icon: 'react' },
       { name: 'JavaScript', icon: 'javascript' },
@@ -162,7 +162,7 @@ export const projects: Project[] = [
     year: '2025',
     liveUrl: 'https://vartaa.vercel.app',
     repoUrl: 'https://github.com/subhash-jhaa/Vartaa',
-    heroImage: '/shortiq.img.png',
+    heroImage: '/vartaa/hero.png',
     logoImage: '/vartaa-logo.svg',
     stack: [
       { name: 'TypeScript', icon: 'typescript' },
@@ -231,6 +231,7 @@ export const projects: Project[] = [
       { src: '/shortiq.img.png', alt: 'Chat', caption: 'TODO' },
       { src: '/shortiq.img.png', alt: 'Chat', caption: 'TODO' },
       { src: '/shortiq.img.png', alt: 'Chat', caption: 'TODO' },
+      { src: '/shortiq.img.png', alt: 'Chat', caption: 'TODO' }
     ],
     challenges: [
       {
