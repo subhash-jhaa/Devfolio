@@ -162,7 +162,7 @@ export const projects: Project[] = [
     year: '2025',
     liveUrl: 'https://vartaa.vercel.app',
     repoUrl: 'https://github.com/subhash-jhaa/Vartaa',
-    heroImage: '/vartaa/hero.png',
+    heroImage: '/Vartaa/hero.png',
     logoImage: '/vartaa-logo.svg',
     stack: [
       { name: 'TypeScript', icon: 'typescript' },

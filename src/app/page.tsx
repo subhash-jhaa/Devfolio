@@ -11,7 +11,7 @@ export default function Home() {
     <ThemeProvider>
       <div className="max-w-[1440px] mx-auto min-h-screen relative">
         <Background />
-        <div className="max-w-[1184px] mx-auto min-h-screen pt-8 lg:pt-8 lg:grid lg:grid-cols-12 lg:gap-8 xl:gap-12 px-4 lg:px-0">
+        <div className="max-w-[1184px] mx-auto min-h-screen pt-8 lg:pt-8 lg:grid lg:grid-cols-12 lg:gap-8 xl:gap-12 px-4 lg:px-0 relative z-20">
           <div className="lg:col-span-5 xl:col-span-4">
             <Sidebar />
           </div>
