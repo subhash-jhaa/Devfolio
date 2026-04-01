@@ -9,6 +9,8 @@ import { ThemeToggle } from './ThemeToggle';
 import { Hero } from '@/components/sections/Hero';
 import { Skills } from '@/components/sections/Skills';
 import { Experience } from '@/components/sections/Experience';
+import { motion } from 'framer-motion';
+import { SLIDE_UP, STAGGER_CONTAINER } from '@/lib/animations';
 
 const SOCIAL_ICONS: Record<string, React.ReactNode> = {
   mail: <Mail className="w-4 h-4" />,
@@ -22,25 +24,37 @@ const SOCIAL_ICONS: Record<string, React.ReactNode> = {
 export const Sidebar: React.FC = () => {
   return (
     <aside className="w-full h-full space-y-4 z-10">
-      <div className="space-y-4">
+      <motion.div 
+        variants={STAGGER_CONTAINER}
+        initial="hidden"
+        animate="visible"
+        className="space-y-4"
+      >
         {/* Profile Section (Hero) */}
         <Hero />
 
         {/* Download CV */}
-        <div style={{ opacity: 1, transform: 'none' }}>
-          <a href={portfolioData.cvUrl} target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-between bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-xl px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-zinc-700 hover:border-gray-300 dark:hover:border-zinc-500 shadow-sm hover:shadow-md" aria-label={portfolioData.labels.cvAriaLabel} tabIndex={0}>
+        <motion.div variants={SLIDE_UP}>
+          <a href={portfolioData.cvUrl} target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-between bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-xl px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-zinc-700 hover:border-gray-300 dark:hover:border-zinc-500 shadow-sm hover:shadow-md hover:translate-y-[-2px]" aria-label={portfolioData.labels.cvAriaLabel} tabIndex={0}>
             <span className="text-sm font-semibold text-gray-700 dark:text-zinc-200">{portfolioData.labels.downloadCv}</span>
             <div className="bg-white dark:bg-zinc-700 border border-gray-100 dark:border-transparent rounded-lg p-1.5 flex items-center justify-center shadow-inner">
               <Download className="h-4 w-4 text-gray-600 dark:text-zinc-300" aria-hidden="true" />
             </div>
           </a>
-        </div>
+        </motion.div>
 
         {/* Social Links */}
-        <div className="flex gap-2 justify-start flex-wrap w-full" aria-label={portfolioData.labels.socialsAriaLabel}>
+        <motion.div 
+          variants={STAGGER_CONTAINER}
+          className="flex gap-2 justify-start flex-wrap w-full" 
+          aria-label={portfolioData.labels.socialsAriaLabel}
+        >
           {portfolioData.socials.map((social, i) => (
-            <a
+            <motion.a
               key={i}
+              variants={SLIDE_UP}
+              whileHover={{ y: -3, scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
@@ -53,17 +67,19 @@ export const Sidebar: React.FC = () => {
               tabIndex={0}
             >
               {SOCIAL_ICONS[social.platform] || <Globe className="w-4 h-4" />}
-            </a>
+            </motion.a>
           ))}
-          <ThemeToggle />
-        </div>
+          <motion.div variants={SLIDE_UP}>
+            <ThemeToggle />
+          </motion.div>
+        </motion.div>
 
         {/* Skills Section */}
         <Skills />
 
         {/* Work Experience Section */}
         <Experience />
-      </div>
+      </motion.div>
     </aside>
   );
 };

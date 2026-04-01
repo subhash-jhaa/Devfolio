@@ -7,7 +7,7 @@
   --foreground: #0a0a0a;
   --grid-color: rgba(0, 0, 0, 0.04);
   --glow-color: rgba(59, 130, 246, 0.02);
-  
+
   /* Contact Section Tokens - Light */
   --card-bg: #ffffff;
   --card-border: #d0d7de;
@@ -93,22 +93,31 @@ body {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 
-/* Custom Grid Pattern - Precise 32px match with reference social */
+/* Side Grid Layout */
 .grid-background {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: -1;
-  background-image: 
+  background-image:
     linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
   background-size: 32px 32px;
-  mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0) 80%);
-  -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0) 80%);
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 20%, transparent 40%),
+    linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 20%, transparent 40%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 20%, transparent 40%),
+    linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 20%, transparent 40%);
+  mask-composite: add;
+  -webkit-mask-composite: source-over;
   pointer-events: none;
 }
 
@@ -132,28 +141,48 @@ body {
 }
 
 
-.glow-top-left { top: -200px; left: -200px; }
-.glow-top-right { top: -200px; right: -200px; }
-.glow-bottom-left { bottom: -200px; left: -200px; }
-.glow-bottom-right { bottom: -200px; right: -200px; }
+.glow-top-left {
+  top: -200px;
+  left: -200px;
+}
+
+.glow-top-right {
+  top: -200px;
+  right: -200px;
+}
+
+.glow-bottom-left {
+  bottom: -200px;
+  left: -200px;
+}
+
+.glow-bottom-right {
+  bottom: -200px;
+  right: -200px;
+}
 
 /* Custom Scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
   height: 4px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background: #e2e8f0;
   border-radius: 10px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #cbd5e1;
 }
+
 .dark .custom-scrollbar::-webkit-scrollbar-thumb {
   background: #1e293b;
 }
+
 .dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #334155;
 }

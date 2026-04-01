@@ -5,6 +5,8 @@ import { Mail, Github, Instagram, Linkedin, Globe } from 'lucide-react';
 import { SiX } from 'react-icons/si';
 import { portfolioData } from "@/components/constants/data";
 import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
+import { SLIDE_UP, STAGGER_CONTAINER, VIEWPORT_CONFIG, SOCIAL_HOVER, SOCIAL_TAP, SUCCESS_POP } from '@/lib/animations';
 
 const SOCIAL_ICONS: Record<string, React.ReactNode> = {
   mail: <Mail className="w-4 h-4" />,
@@ -80,11 +82,17 @@ export default function ContactSection() {
   };
 
   return (
-    <div className="w-full">
+    <motion.div 
+      variants={SLIDE_UP}
+      initial="hidden"
+      whileInView="visible"
+      viewport={VIEWPORT_CONFIG}
+      className="w-full"
+    >
       <div className="rounded-3xl p-4 sm:p-8 border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 shadow-xl overflow-hidden">
         {/* Card Header */}
         <div className="flex items-center gap-2 mb-5 pb-[18px] border-b border-header-border">
-          <div className="w-2.5 h-2.5 rounded-full bg-dot-green" />
+          <div className="w-2.5 h-2.5 rounded-full bg-dot-green animate-pulse" />
           <p className="text-sm font-semibold text-gray-900 dark:text-zinc-100">
             <span className="text-text-link">{portfolioData.name.split(' ')[0].toLowerCase()}</span>
             <span className="text-text-muted">.</span>
@@ -96,7 +104,7 @@ export default function ContactSection() {
         {/* Form */}
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-            <div>
+            <motion.div variants={SLIDE_UP}>
               <label htmlFor="name" className="block text-[13px] font-semibold text-gray-900 dark:text-zinc-100 mb-[7px]">
                 {portfolioData.contact.nameLabel}<span className="text-error">*</span>
               </label>
@@ -109,10 +117,10 @@ export default function ContactSection() {
                 placeholder={portfolioData.contact.namePlaceholder}
                 className={`w-full rounded-lg px-[14px] py-[11px] text-[15px] font-sans bg-input-bg border ${
                   errors.name ? 'border-error' : 'border-input-border'
-                } text-input-text placeholder:text-input-placeholder outline-none focus:border-text-link focus:ring-2 focus:ring-text-link/10`}
+                } text-input-text placeholder:text-input-placeholder outline-none focus:border-text-link focus:ring-2 focus:ring-text-link/10 transition-all duration-200`}
               />
-            </div>
-            <div>
+            </motion.div>
+            <motion.div variants={SLIDE_UP}>
               <label htmlFor="email" className="block text-[13px] font-semibold text-gray-900 dark:text-zinc-100 mb-[7px]">
                 {portfolioData.contact.emailLabel}<span className="text-error">*</span>
               </label>
@@ -125,12 +133,12 @@ export default function ContactSection() {
                 placeholder={portfolioData.contact.emailPlaceholder}
                 className={`w-full rounded-lg px-[14px] py-[11px] text-[15px] font-sans bg-input-bg border ${
                   errors.email ? 'border-error' : 'border-input-border'
-                } text-input-text placeholder:text-input-placeholder outline-none focus:border-text-link focus:ring-2 focus:ring-text-link/10`}
+                } text-input-text placeholder:text-input-placeholder outline-none focus:border-text-link focus:ring-2 focus:ring-text-link/10 transition-all duration-200`}
               />
-            </div>
+            </motion.div>
           </div>
 
-          <div className="mb-4">
+          <motion.div variants={SLIDE_UP} className="mb-4">
             <label htmlFor="subject" className="block text-[13px] font-semibold text-gray-900 dark:text-zinc-100 mb-[7px]">
               {portfolioData.contact.subjectLabel}
             </label>
@@ -143,9 +151,9 @@ export default function ContactSection() {
               placeholder={portfolioData.contact.subjectPlaceholder}
               className="w-full rounded-lg px-[14px] py-[11px] text-[15px] font-sans bg-input-bg border border-input-border text-input-text placeholder:text-input-placeholder outline-none focus:border-text-link focus:ring-2 focus:ring-text-link/10"
             />
-          </div>
+          </motion.div>
 
-          <div className="mb-4">
+          <motion.div variants={SLIDE_UP} className="mb-4">
             <label htmlFor="message" className="block text-[13px] font-semibold text-gray-900 dark:text-zinc-100 mb-[7px]">
               {portfolioData.contact.messageLabel}<span className="text-error">*</span>
             </label>
@@ -160,38 +168,56 @@ export default function ContactSection() {
                 errors.message ? 'border-error' : 'border-input-border'
               } text-input-text placeholder:text-input-placeholder outline-none focus:border-text-link focus:ring-2 focus:ring-text-link/10 resize-none`}
             />
-          </div>
+          </motion.div>
 
-          {status !== 'sent' ? (
-            <button
-              type="submit"
-              disabled={status === 'sending'}
-              className="w-full flex items-center justify-center gap-2 rounded-lg py-[13px] mt-1 text-sm font-semibold tracking-wide bg-btn-bg text-btn-text border border-btn-border hover:bg-btn-hover disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="22" y1="2" x2="11" y2="13" />
-                <polygon points="22 2 15 22 11 13 2 9 22 2" />
-              </svg>
-              <span>{status === 'sending' ? portfolioData.contact.buttonSending : portfolioData.contact.buttonIdle}</span>
-            </button>
-          ) : (
-            <div className="w-full flex items-center justify-center gap-2 mt-1 rounded-lg py-[13px] border border-header-border text-[13px] font-medium bg-green-500/10 dark:bg-green-500/20 text-green-700 dark:text-green-400">
-              <span>{portfolioData.contact.successMessage}</span>
-              <span className="text-text-muted text-[12px]">
-                // {portfolioData.name} {portfolioData.contact.replyWaitTime}
-              </span>
-            </div>
-          )}
+          <motion.div variants={SLIDE_UP}>
+            {status !== 'sent' ? (
+              <motion.button
+                whileHover={SOCIAL_HOVER}
+                whileTap={SOCIAL_TAP}
+                type="submit"
+                disabled={status === 'sending'}
+                className="w-full flex items-center justify-center gap-2 rounded-lg py-[13px] mt-1 text-sm font-semibold tracking-wide bg-btn-bg text-btn-text border border-btn-border hover:bg-btn-hover disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+                <span>{status === 'sending' ? portfolioData.contact.buttonSending : portfolioData.contact.buttonIdle}</span>
+              </motion.button>
+            ) : (
+              <motion.div 
+                variants={SUCCESS_POP}
+                initial="hidden"
+                animate="visible"
+                className="w-full flex items-center justify-center gap-2 mt-1 rounded-lg py-[13px] border border-header-border text-[13px] font-medium bg-green-500/10 dark:bg-green-500/20 text-green-700 dark:text-green-400"
+              >
+                <span>{portfolioData.contact.successMessage}</span>
+                <span className="text-text-muted text-[12px]">
+                  // {portfolioData.name} {portfolioData.contact.replyWaitTime}
+                </span>
+              </motion.div>
+            )}
+          </motion.div>
         </form>
 
         <hr className="border-t border-header-border my-[22px]" />
 
         {/* Dynamic Social Buttons sourced from portfolioData */}
-        <div className="flex flex-row gap-2 flex-wrap">
+        <motion.div 
+          variants={STAGGER_CONTAINER}
+          initial="hidden"
+          whileInView="visible"
+          viewport={VIEWPORT_CONFIG}
+          className="flex flex-row gap-2 flex-wrap"
+        >
           {portfolioData.socials
             .filter(social => ['github', 'linkedin', 'x'].includes(social.platform))
             .map((social, i) => (
-              <a
+              <motion.a
+                variants={SLIDE_UP}
+                whileHover={SOCIAL_HOVER}
+                whileTap={SOCIAL_TAP}
                 key={i}
                 href={social.url}
                 target="_blank"
@@ -204,10 +230,10 @@ export default function ContactSection() {
                 aria-label={`Visit ${social.platform} profile`}
               >
                 {SOCIAL_ICONS[social.platform] || <Globe className="w-4 h-4" />}
-              </a>
+              </motion.a>
             ))}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }

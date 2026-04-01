@@ -73,7 +73,7 @@ export const portfolioData: PortfolioData = {
       slug: "shortiq",
       description: "An AI-powered automation platform that empowers creators to build and scale faceless content empires through seamless script generation, high-performance rendering, and direct social media publishing.",
       status: "Live",
-      techStack: ["Next.js", "TypeScript", "Tailwind","PostgreSQL","Google Gemini", "Resend","clerk"],
+      techStack: ["Next.js", "TypeScript", "Tailwind", "PostgreSQL", "Google Gemini", "Resend", "clerk"],
       logo: "/shortiq/logo.svg",
       color: "#fb7185",
       url: "https://short-iq.vercel.app",
@@ -83,7 +83,7 @@ export const portfolioData: PortfolioData = {
       name: "Vartaa : Real-time Multi-lingual Messaging Platform",
       slug: "vartaa",
       description: "Vartaa (Vartā - *Conversation*) is a premium, real-time messaging platform designed to bridge global language gaps.Vartaa enables users to communicate naturally in their preferred language while providing instant translation and transcription for global collaboration.",
-      techStack: ["TypeScript", "Next.js", "Tailwind CSS", "Convex", "Radix UI", "Gemini","Sarvam AI"],
+      techStack: ["TypeScript", "Next.js", "Tailwind CSS", "Convex", "Radix UI", "Gemini", "Sarvam AI"],
       status: "Live",
       logo: "/vartaa-logo.svg",
       color: "black",
@@ -101,7 +101,7 @@ export const portfolioData: PortfolioData = {
       url: "https://my-investiq.vercel.app",
       githubUrl: "https://github.com/subhash-jhaa/Invest-IQ",
     },
-    
+
     {
       name: "DevEvent - Community Event Discovery and Booking Platform",
       slug: "devevent",

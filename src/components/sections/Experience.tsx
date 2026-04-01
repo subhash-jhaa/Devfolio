@@ -2,16 +2,31 @@
 
 import React from 'react';
 import { portfolioData } from "@/components/constants/data";
+import { motion } from "framer-motion";
+import { STAGGER_CONTAINER, SLIDE_UP, VIEWPORT_CONFIG, FADE_IN_LEFT } from "@/lib/animations";
 
 export const Experience = () => {
   return (
     <section className="pt-4" aria-label="Work experience">
-      <h2 className="mb-4 text-base font-bold text-gray-900 dark:text-zinc-100 text-left">{portfolioData.titles.experience}</h2>
-      <div className="space-y-4">
+      <motion.h2 
+        variants={FADE_IN_LEFT}
+        initial="hidden"
+        whileInView="visible"
+        viewport={VIEWPORT_CONFIG}
+        className="mb-4 text-base font-bold text-gray-900 dark:text-zinc-100 text-left"
+      >
+        {portfolioData.titles.experience}
+      </motion.h2>
+      <motion.div 
+        variants={STAGGER_CONTAINER}
+        initial="hidden"
+        whileInView="visible"
+        viewport={VIEWPORT_CONFIG}
+        className="space-y-4"
+      >
         {portfolioData.experience.map((exp, i) => (
-          <div key={i} className="relative">
-            {/* dot removed */}
-            <div className="rounded-2xl border border-gray-100 dark:border-zinc-700 bg-white dark:bg-zinc-800/60 p-4 shadow-sm hover:shadow-md hover:border-gray-300 dark:hover:border-zinc-500">
+          <motion.div key={i} variants={SLIDE_UP} className="relative">
+            <div className="rounded-2xl border border-gray-100 dark:border-zinc-700 bg-white dark:bg-zinc-800/60 p-4 shadow-sm hover:shadow-md hover:border-gray-300 dark:hover:border-zinc-500 hover:translate-x-1">
                 <div className="flex items-center gap-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white dark:bg-zinc-700 flex-shrink-0 border border-gray-200 dark:border-zinc-600 shadow-sm">
                     <img alt={exp.company} className="h-6 w-6 object-contain" src={exp.logo} />
@@ -24,9 +39,9 @@ export const Experience = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
     </section>
   );
 };
