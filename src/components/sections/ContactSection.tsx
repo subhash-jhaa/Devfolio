@@ -173,8 +173,7 @@ export default function ContactSection() {
           <motion.div variants={SLIDE_UP}>
             {status !== 'sent' ? (
               <motion.button
-                whileHover={SOCIAL_HOVER}
-                whileTap={SOCIAL_TAP}
+                whileTap={{ scale: 0.98 }}
                 type="submit"
                 disabled={status === 'sending'}
                 className="w-full flex items-center justify-center gap-2 rounded-lg py-[13px] mt-1 text-sm font-semibold tracking-wide bg-btn-bg text-btn-text border border-btn-border hover:bg-btn-hover disabled:opacity-50 disabled:cursor-not-allowed"

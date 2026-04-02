@@ -72,14 +72,15 @@ export const FADE_IN_LEFT: Variants = {
 };
 
 export const SCALE_SPRING: Variants = {
-  hidden: { scale: 0.8, opacity: 0 },
+  hidden: { scale: 0.95, opacity: 0 },
   visible: { 
     scale: 1, 
     opacity: 1,
     transition: { 
       type: "spring",
-      stiffness: 260,
-      damping: 20
+      stiffness: 300,
+      damping: 25,
+      mass: 0.5
     }
   }
 };

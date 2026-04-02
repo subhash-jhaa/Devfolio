@@ -107,7 +107,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             {project.techStack.map((tech) => (
               <motion.span 
                 key={tech} 
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.02 }}
                 className="inline-flex items-center gap-1 text-[10px] font-medium rounded-md px-1.5 py-1 bg-gray-50 dark:bg-zinc-700 text-slate-700 dark:text-zinc-300 border border-slate-200 dark:border-zinc-600 shadow-sm group-hover:bg-gray-100 dark:group-hover:bg-zinc-600"
               >
                 <TechIcon name={tech} size={14} />

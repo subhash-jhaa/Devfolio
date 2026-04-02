@@ -228,7 +228,7 @@ export const projects: Project[] = [
       }
     ],
     screenshots: [
-      { src: '/shortiq.img.png', alt: 'Chat', caption: 'TODO' },
+      { src: '/Vartaa/get.png', alt: 'Chat', caption: 'TODO' },
       { src: '/shortiq.img.png', alt: 'Chat', caption: 'TODO' },
       { src: '/shortiq.img.png', alt: 'Chat', caption: 'TODO' },
       { src: '/shortiq.img.png', alt: 'Chat', caption: 'TODO' }
