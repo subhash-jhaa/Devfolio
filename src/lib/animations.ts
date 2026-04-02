@@ -1,4 +1,4 @@
-import { Variants } from "framer-motion";
+import { Variants, TargetAndTransition } from "framer-motion";
 
 /**
  * Common animation variants for consistent motion across the app.
@@ -46,12 +46,12 @@ export const SCALE_IN: Variants = {
   },
 };
 
-export const HOVER_SCALE = {
+export const HOVER_SCALE: TargetAndTransition = {
   scale: 1.02,
   transition: { type: "spring", stiffness: 400, damping: 10 }
 };
 
-export const TAP_SCALE = { scale: 0.98 };
+export const TAP_SCALE: TargetAndTransition = { scale: 0.98 };
 
 export const SPRING_TRANSITION = {
   type: "spring",
@@ -101,13 +101,13 @@ export const VIEWPORT_STRICT = {
 /**
  * Social icon/card hover effects
  */
-export const SOCIAL_HOVER = { 
+export const SOCIAL_HOVER: TargetAndTransition = { 
   y: -3, 
   scale: 1.1,
   transition: { type: "spring", stiffness: 400, damping: 10 }
 };
 
-export const SOCIAL_TAP = { scale: 0.9 };
+export const SOCIAL_TAP: TargetAndTransition = { scale: 0.9 };
 
 /**
  * Success message pop-in
