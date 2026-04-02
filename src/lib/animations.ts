@@ -48,7 +48,7 @@ export const SCALE_IN: Variants = {
 
 export const HOVER_SCALE: TargetAndTransition = {
   scale: 1.02,
-  transition: { type: "spring", stiffness: 400, damping: 10 }
+  transition: { type: "spring" as const, stiffness: 400, damping: 10 }
 };
 
 export const TAP_SCALE: TargetAndTransition = { scale: 0.98 };
@@ -104,7 +104,7 @@ export const VIEWPORT_STRICT = {
 export const SOCIAL_HOVER: TargetAndTransition = { 
   y: -3, 
   scale: 1.1,
-  transition: { type: "spring", stiffness: 400, damping: 10 }
+  transition: { type: "spring" as const, stiffness: 400, damping: 10 }
 };
 
 export const SOCIAL_TAP: TargetAndTransition = { scale: 0.9 };
