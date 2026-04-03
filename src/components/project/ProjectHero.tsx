@@ -7,6 +7,12 @@ interface ProjectHeroProps {
 
 export function ProjectHero({ heroImage, title }: ProjectHeroProps) {
   return (
-    <ProjectImage src={heroImage} alt={title} aspectRatio="16/9" />
+    <ProjectImage 
+      src={heroImage} 
+      alt={title} 
+      aspectRatio="16/9" 
+      priority={true} 
+      quality={100} 
+    />
   );
 }

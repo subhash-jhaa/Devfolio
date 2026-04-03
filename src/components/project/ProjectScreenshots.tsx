@@ -19,7 +19,7 @@ export function ProjectScreenshots({ screenshots }: ProjectScreenshotsProps) {
             <ProjectImage 
               src={s.src} 
               alt={s.alt} 
-              aspectRatio="16/10" 
+              aspectRatio="auto" 
             />
             <p className="text-center text-gray-400 dark:text-[#555555] text-xs font-mono">
               {s.caption}

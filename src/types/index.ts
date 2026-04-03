@@ -59,6 +59,7 @@ export interface PortfolioData {
   profilePic: string;
   email: string;
   cvUrl: string;
+  views?: number;
   socials: Social[];
   skills: Skill[];
   experience: Experience[];

@@ -10,7 +10,8 @@ export const projects: Project[] = [
     year: '2025 – 2026',
     liveUrl: 'https://short-iq.vercel.app',
     repoUrl: 'https://github.com/subhash-jhaa/ShortIQ',
-    heroImage: '/shortiq.img.png',
+
+    heroImage: '/shortiq/hero.png',
     logoImage: '/shortiq/logo.svg',
     stack: [
       { name: 'Next.js', icon: 'nextdotjs' },
@@ -24,24 +25,24 @@ export const projects: Project[] = [
     ],
     overview: [
       'ShortIQ is an AI-powered content automation platform that transforms raw ideas into viral-ready video series for TikTok, Reels, and Shorts. By bridging Google Gemini’s creative scripting with Creatomate’s high-performance rendering, it provides a seamless production engine for building faceless content empires. Features include automated AI scripting, direct multi-platform social publishing, and a premium glassmorphism dashboard designed for high-velocity creators. ShortIQ empowers creators to scale their content output, optimize for virality, and focus on growth while the platform handles the entire production pipeline from concept to publish.',
-      
+
     ],
     implementation: [
-      { 
-        title: 'AI-Driven Content Framework', 
-        description: 'Engineered a sophisticated scripting engine using Google Gemini for creative ideation and Groq SDK for near-instant text generation.' 
+      {
+        title: 'AI-Driven Content Framework',
+        description: 'Engineered a sophisticated scripting engine using Google Gemini for creative ideation and Groq SDK for near-instant text generation.'
       },
-      { 
-        title: 'Dynamic Cloud Rendering', 
-        description: 'Integrated the Creatomate API into a custom rendering pipeline to produce high-fidelity video assets with automated text overlays and transitions.' 
+      {
+        title: 'Dynamic Cloud Rendering',
+        description: 'Integrated the Creatomate API into a custom rendering pipeline to produce high-fidelity video assets with automated text overlays and transitions.'
       },
-      { 
-        title: 'Resilient Workflow Management', 
-        description: 'Leveraged Inngest to build a durable, event-driven background processing system that ensures 100% reliability for long-running video generation tasks.' 
+      {
+        title: 'Resilient Workflow Management',
+        description: 'Leveraged Inngest to build a durable, event-driven background processing system that ensures 100% reliability for long-running video generation tasks.'
       },
-      { 
-        title: 'Real-Time Data Architecture', 
-        description: 'Utilized Supabase\'s real-time subscriptions to deliver instantaneous generation status updates across both desktop and mobile user interfaces.' 
+      {
+        title: 'Real-Time Data Architecture',
+        description: 'Utilized Supabase\'s real-time subscriptions to deliver instantaneous generation status updates across both desktop and mobile user interfaces.'
       },
     ],
     features: [
@@ -54,27 +55,29 @@ export const projects: Project[] = [
       { title: 'Step-by-Step Guide', description: 'It has a simple guide to help you master every feature on the site.' },
     ],
     screenshots: [
-      { src: '/shortiq.img.png', alt: 'Dashboard', caption: 'TODO: caption' },
-      { src: '/shortiq.img.png', alt: 'Dashboard', caption: 'TODO: caption' },
-      { src: '/shortiq.img.png', alt: 'Dashboard', caption: 'TODO: caption' },
-      { src: '/shortiq.img.png', alt: 'Dashboard', caption: 'TODO: caption' },
+      { src: '/shortiq/overview.png', alt: 'Dashboard', caption: 'TODO: caption' },
+      { src: '/shortiq/series.png', alt: 'Dashboard', caption: 'TODO: caption' },
+      { src: '/shortiq/videos.png', alt: 'Dashboard', caption: 'TODO: caption' },
+      { src: '/shortiq/Guid.png', alt: 'Dashboard', caption: 'TODO: caption' },
+      { src: '/shortiq/setting.png', alt: 'Dashboard', caption: 'TODO: caption' },
+      { src: '/shortiq/profile.png', alt: 'Dashboard', caption: 'TODO: caption' },
     ],
     challenges: [
-      { 
-        problem:  'Managing high-latency video rendering requests', 
-        solution: 'Built a resilient background workflow system using Inngest, providing automatic retry logic and state persistence for reliable long-form video generation.' 
+      {
+        problem: 'Managing high-latency video rendering requests',
+        solution: 'Built a resilient background workflow system using Inngest, providing automatic retry logic and state persistence for reliable long-form video generation.'
       },
-      { 
-        problem:  'Optimizing script generation speed for a better UX', 
-        solution: 'Combined Groq SDK and Google Gemini for near-instant text generation, allowing users to start editing scripts immediately without waiting for complex AI reasoning.' 
+      {
+        problem: 'Optimizing script generation speed for a better UX',
+        solution: 'Combined Groq SDK and Google Gemini for near-instant text generation, allowing users to start editing scripts immediately without waiting for complex AI reasoning.'
       },
-      { 
-        problem: 'Maintaining a premium, responsive UI on mobile devices', 
-        solution: 'Engineered a custom slide-over sidebar and touch-optimized layout using Vanilla CSS, ensuring the dashboard remains premium and functional on any screen size.' 
+      {
+        problem: 'Maintaining a premium, responsive UI on mobile devices',
+        solution: 'Engineered a custom slide-over sidebar and touch-optimized layout using Vanilla CSS, ensuring the dashboard remains premium and functional on any screen size.'
       },
-      { 
-        problem: 'Coordinating secure publishing across multiple social platforms', 
-        solution: 'Developed a unified integration layer that maps a single video generation to YouTube, TikTok, and Instagram APIs, ensuring consistent quality and metadata across all social channels.' 
+      {
+        problem: 'Coordinating secure publishing across multiple social platforms',
+        solution: 'Developed a unified integration layer that maps a single video generation to YouTube, TikTok, and Instagram APIs, ensuring consistent quality and metadata across all social channels.'
       },
     ],
   },
@@ -128,10 +131,10 @@ export const projects: Project[] = [
       { title: 'Scalable Appwrite Backend', description: 'Secure data management and user authentication powered by Appwrite for a reliable investment experience.' }
     ],
     screenshots: [
-      { src: '/shortiq.img.png', alt: 'App', caption: 'TODO' },
-      { src: '/shortiq.img.png', alt: 'App', caption: 'TODO' },
-      { src: '/shortiq.img.png', alt: 'App', caption: 'TODO' },
-      { src: '/shortiq.img.png', alt: 'App', caption: 'TODO' }
+      { src: '/investiq/overview.png', alt: 'App', caption: 'TODO' },
+      { src: '/investiq/riskprofile.png', alt: 'App', caption: 'TODO' },
+      { src: '/investiq/calculator.png', alt: 'App', caption: 'TODO' },
+      { src: '/investiq/investment.png', alt: 'App', caption: 'TODO' }
     ],
     challenges: [
       {
@@ -228,10 +231,10 @@ export const projects: Project[] = [
       }
     ],
     screenshots: [
-      { src: '/Vartaa/get.png', alt: 'Chat', caption: 'TODO' },
-      { src: '/shortiq.img.png', alt: 'Chat', caption: 'TODO' },
-      { src: '/shortiq.img.png', alt: 'Chat', caption: 'TODO' },
-      { src: '/shortiq.img.png', alt: 'Chat', caption: 'TODO' }
+      { src: '/Vartaa/whatuget.png', alt: 'Chat', caption: 'TODO' },
+      { src: '/Vartaa/roomcount.png', alt: 'Chat', caption: 'TODO' },
+      { src: '/Vartaa/chat.png', alt: 'Chat', caption: 'TODO' },
+      { src: '/Vartaa/language.png', alt: 'Chat', caption: 'TODO' }
     ],
     challenges: [
       {

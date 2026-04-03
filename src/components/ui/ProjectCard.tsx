@@ -24,8 +24,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
   return (
     <motion.article 
-      whileHover={{ y: -5 }}
-      whileTap={{ scale: 0.98 }}
+      whileHover={{ y: -2 }}
+      whileTap={{ scale: 0.99 }}
       className="group relative flex w-full h-full"
     >
       <div 

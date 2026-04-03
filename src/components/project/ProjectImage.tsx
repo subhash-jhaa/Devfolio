@@ -7,10 +7,19 @@ type Props = {
   src: string
   alt: string
   className?: string
-  aspectRatio?: string   // e.g. "16/9" or "16/10"  default: "16/9"
+  aspectRatio?: string   // e.g. "16/9", "16/10", or "auto"
+  priority?: boolean
+  quality?: number
 }
 
-export default function ProjectImage({ src, alt, className, aspectRatio = '16/9' }: Props) {
+export default function ProjectImage({ 
+  src, 
+  alt, 
+  className, 
+  aspectRatio = '16/9',
+  priority = false,
+  quality = 100
+}: Props) {
   const [failed, setFailed] = useState(!src)
 
   if (failed) {
@@ -18,7 +27,7 @@ export default function ProjectImage({ src, alt, className, aspectRatio = '16/9'
       <div
         className={`w-full bg-gray-50 dark:bg-[#141414] border border-gray-200 dark:border-[#272727] rounded-lg 
           flex items-center justify-center ${className ?? ''}`}
-        style={{ aspectRatio }}
+        style={{ aspectRatio: aspectRatio === 'auto' ? '16/9' : aspectRatio }}
       >
         <div className="flex flex-col items-center gap-2 text-gray-400 dark:text-[#333]">
           {/* simple image icon */}
@@ -40,14 +49,16 @@ export default function ProjectImage({ src, alt, className, aspectRatio = '16/9'
     <div
       className={`relative w-full overflow-hidden rounded-lg border 
         border-gray-200 dark:border-[#272727] bg-gray-100 dark:bg-[#141414] ${className ?? ''}`}
-      style={{ aspectRatio }}
+      style={{ aspectRatio: aspectRatio === 'auto' ? 'auto' : aspectRatio }}
     >
       <Image
         src={src}
         alt={alt}
-        fill
-        sizes="(max-width: 640px) 100vw, 760px"
-        className="object-cover"
+        {...(aspectRatio === 'auto' ? { width: 1200, height: 750 } : { fill: true })}
+        quality={quality}
+        sizes="(max-width: 640px) 100vw, 1200px"
+        className={aspectRatio === 'auto' ? 'w-full h-auto' : 'object-cover'}
+        priority={priority}
         onError={() => setFailed(true)}
       />
     </div>

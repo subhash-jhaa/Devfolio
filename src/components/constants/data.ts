@@ -15,6 +15,7 @@ export const portfolioData: PortfolioData = {
   profilePic: "https://github.com/subhash-jhaa.png",
   email: "subhashkumarjha162@gmail.com",
   cvUrl: "/subhash_jha_resume.pdf",
+  views: 10,
   socials: [
     { platform: "mail", url: "mailto:subhashkumarjha162@gmail.com" },
     { platform: "github", url: "https://github.com/subhash-jhaa" },

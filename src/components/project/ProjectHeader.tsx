@@ -1,3 +1,4 @@
+import React from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import { ProjectStatus, StackItem } from '@/types/project';
 import { TechIcon } from '../ui/TechIcon';
