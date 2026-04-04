@@ -55,12 +55,12 @@ export const projects: Project[] = [
       { title: 'Step-by-Step Guide', description: 'It has a simple guide to help you master every feature on the site.' },
     ],
     screenshots: [
-      { src: '/shortiq/overview.png', alt: 'Dashboard', caption: 'TODO: caption' },
-      { src: '/shortiq/series.png', alt: 'Dashboard', caption: 'TODO: caption' },
-      { src: '/shortiq/videos.png', alt: 'Dashboard', caption: 'TODO: caption' },
-      { src: '/shortiq/Guid.png', alt: 'Dashboard', caption: 'TODO: caption' },
-      { src: '/shortiq/setting.png', alt: 'Dashboard', caption: 'TODO: caption' },
-      { src: '/shortiq/profile.png', alt: 'Dashboard', caption: 'TODO: caption' },
+      { src: '/shortiq/overview.png', alt: 'Dashboard', caption: 'Intuitive glassmorphism dashboard for managing AI video projects' },
+      { src: '/shortiq/create.png', alt: 'Create Video', caption: 'Effortless video creation with AI-powered scripting and layout selection' },
+      { src: '/shortiq/series.png', alt: 'Series Management', caption: 'Organize and track automated content series across multiple social platforms' },
+      { src: '/shortiq/videos.png', alt: 'Video Gallery', caption: 'Review and download high-fidelity rendered video assets ready for publishing' },
+      { src: '/shortiq/Guid.png', alt: 'User Guide', caption: 'Comprehensive step-by-step onboarding for mastering content automation' },
+      { src: '/shortiq/setting.png', alt: 'Settings', caption: 'Secure account management and API integration controls' },
     ],
     challenges: [
       {
@@ -131,10 +131,10 @@ export const projects: Project[] = [
       { title: 'Scalable Appwrite Backend', description: 'Secure data management and user authentication powered by Appwrite for a reliable investment experience.' }
     ],
     screenshots: [
-      { src: '/investiq/overview.png', alt: 'App', caption: 'TODO' },
-      { src: '/investiq/riskprofile.png', alt: 'App', caption: 'TODO' },
-      { src: '/investiq/calculator.png', alt: 'App', caption: 'TODO' },
-      { src: '/investiq/investment.png', alt: 'App', caption: 'TODO' }
+      { src: '/investiq/overview.png', alt: 'App Overview', caption: 'Clean investment dashboard with real-time financial insights' },
+      { src: '/investiq/riskprofile.png', alt: 'Risk Profile', caption: 'Interactive AI assessment of your investment goals and risk tolerance' },
+      { src: '/investiq/calculator.png', alt: 'Financial Calculators', caption: 'Highly visual SIP and FD growth charts for smarter planning' },
+      { src: '/investiq/investment.png', alt: 'Fund Recommendations', caption: 'Gemini-powered fund suggestions tailored to your profile' }
     ],
     challenges: [
       {
@@ -231,10 +231,10 @@ export const projects: Project[] = [
       }
     ],
     screenshots: [
-      { src: '/Vartaa/whatuget.png', alt: 'Chat', caption: 'TODO' },
-      { src: '/Vartaa/roomcount.png', alt: 'Chat', caption: 'TODO' },
-      { src: '/Vartaa/chat.png', alt: 'Chat', caption: 'TODO' },
-      { src: '/Vartaa/language.png', alt: 'Chat', caption: 'TODO' }
+      { src: '/Vartaa/whatuget.png', alt: 'Feature Overview', caption: 'High-performance team collaboration with AI-driven summaries' },
+      { src: '/Vartaa/roomcount.png', alt: 'Room Management', caption: 'Focused rooms designed for zero-noise professional communication' },
+      { src: '/Vartaa/chat.png', alt: 'Real-time Chat', caption: 'Multilingual messaging with <100ms synchronization across devices' },
+      { src: '/Vartaa/language.png', alt: 'Language Settings', caption: 'Instant native translation across 22+ Indian languages' }
     ],
     challenges: [
       {

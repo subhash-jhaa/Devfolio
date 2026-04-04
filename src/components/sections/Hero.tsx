@@ -15,7 +15,7 @@ export const Hero = () => {
     >
       <motion.div
         variants={SCALE_SPRING}
-        className="relative flex shrink-0 overflow-hidden rounded-full w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 border-4 border-cyan-400/30 bg-white dark:bg-zinc-800 shadow-xl"
+        className="relative flex shrink-0 overflow-hidden rounded-full w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 border-4 border-indigo-400/30 bg-white dark:bg-zinc-800 shadow-xl"
       >
         <img
           alt={portfolioData.name}
