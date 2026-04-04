@@ -19,9 +19,9 @@ export const portfolioData: PortfolioData = {
   socials: [
     { platform: "mail", url: "mailto:subhashkumarjha162@gmail.com" },
     { platform: "github", url: "https://github.com/subhash-jhaa" },
-    { platform: "instagram", url: "https://subhashjha.me" },
+    { platform: "instagram", url: "https://www.instagram.com/subhashjha.me" },
     { platform: "linkedin", url: "https://www.linkedin.com/in/subhashdev" },
-    { platform: "website", url: "https://www.linkedin.com/in/subhashdev" },
+    { platform: "website", url: "https://subhashjha.me" },
     { platform: "x", url: "https://x.com/subhash_jh" },
   ],
   skills: [
