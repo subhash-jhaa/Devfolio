@@ -25,6 +25,9 @@
   --btn-text: #ffffff;
   --error: #cf222e;
   --success: #1a7f37;
+  --repo-card-bg: #ffffff;
+  --repo-card-border: #d0d7de;
+  --repo-card-hover-border: #0969da;
 }
 
 .dark {
@@ -50,6 +53,9 @@
   --btn-text: #e6edf3;
   --error: #f85149;
   --success: #3fb950;
+  --repo-card-bg: #161b22;
+  --repo-card-border: #30363d;
+  --repo-card-hover-border: #79c0ff;
 }
 
 @theme inline {
@@ -75,6 +81,9 @@
   --color-btn-text: var(--btn-text);
   --color-error: var(--error);
   --color-success: var(--success);
+  --color-repo-card-bg: var(--repo-card-bg);
+  --color-repo-card-border: var(--repo-card-border);
+  --color-repo-card-hover-border: var(--repo-card-hover-border);
 }
 
 body {
